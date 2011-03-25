@@ -1,0 +1,11 @@
+<div class="block">
+  <div class="content">
+    <h2 class="title">新增 Akismet Key</h2>
+    <div class="inner">
+      <%= form_for :akismet, :url => akismet_path, :html => { :class => :form } do |f| -%>
+        <%= render :partial => "form", :locals => {:f => f} %>
+      <% end -%>
+    </div>
+  </div>
+</div>
+

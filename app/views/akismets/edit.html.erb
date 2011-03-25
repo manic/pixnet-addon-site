@@ -1,0 +1,5 @@
+<%= form_for @akismet, :url => akismet_path(@akismet), :html => { :class => :form } do |f| -%>
+  <h2 class="title">修改 Akismet Key</h2>
+  <%= render :partial => "form", :locals => {:f => f} %>
+<% end -%>
+

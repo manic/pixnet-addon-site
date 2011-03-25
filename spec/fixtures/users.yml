@@ -1,0 +1,11 @@
+one:
+  login: "manic"
+  email: "manic@pixnet.net"
+  nickname: "沒力小僧"
+  identity_url: "https://openid.pixnet.cc/u/manic"
+  
+two:
+  login: "manictest1"
+  email: "manictest1@pixnet.net"
+  nickname: "沒力一號"
+  identity_url: "https://openid.pixnet.cc/u/manictest1"

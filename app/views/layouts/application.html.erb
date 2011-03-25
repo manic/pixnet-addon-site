@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pplugin App</title>
+  <%= stylesheet_link_tag "http://code.jquery.com/mobile/1.0a3/jquery.mobile-1.0a3.min.css" %>
+  <%= javascript_include_tag :defaults, "http://code.jquery.com/mobile/1.0a3/jquery.mobile-1.0a3.min.js" %>
+  <%= csrf_meta_tag %>
+</head>
+<body>
+<div data-role="page">
+  <div data-role="header">
+    <h1><%= @header %></h1>
+    <% if current_user %>
+      <%= link_to "Logout", logout_path, :class => "ui-btn-right", :rel => "external" %>
+    <% else %>
+      <%= link_to "Login", login_path, :class => "ui-btn-right", :rel => "external" %>
+    <% end %>
+  </div>
+  <div data-role="content">
+    <%= yield %>
+  </div>
+</div>
+</body>
+</html>

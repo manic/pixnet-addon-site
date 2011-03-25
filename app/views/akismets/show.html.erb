@@ -1,0 +1,26 @@
+
+<% if @current_user.pixnet.present? %>
+  <ul data-role="listview">
+    <li data-role="list-divider">Akismet 狀態</li>
+    <li>
+    <h3><%= Akismet.human_attribute_name(:apikey) %></h3>
+    <p><strong><%= @akismet.apikey %></strong></p>
+    <p>The key is <%= @akismet.validate ? "valid" : "not valid" %></p>
+    </li>
+    <li>
+    <h3><%= Akismet.human_attribute_name(:enabled) %></h3>
+    <p><strong><%= @akismet.enabled %></strong></p>
+    </li>
+    <li>
+    <h3>已有 <%= @current_user.comments.confirmed.size %> 則迴響被處理</h3>
+    <p><strong>目前有 <%= @current_user.comments.is_spam.size %> 則迴響被標示為廣告留言</strong></p>
+    </li>
+  </ul>
+<p></p>
+  <div data-role="controlgroup" data-type="horizontal">
+    <%= link_to "#{t("web-app-theme.edit", :default => "Edit")}", edit_akismet_path, "data-role" => :button %>
+    <%= link_to "#{t("web-app-theme.delete", :default => "Delete")}", akismet_path, :method => :delete, :confirm => "#{t("web-app-theme.confirm", :default => "Are you sure?")}", "data-role" => :button %>
+  </div>
+<% else %>
+  若要使用 Akismet 功能，您必須先認證 <%= link_to "#{t("pplugin.pixnet_oauth", :default => "PIXNET OAuth")}", oauth_consumer_path("pixnet"), :rel => "external" %>
+<% end %>

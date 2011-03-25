@@ -1,0 +1,10 @@
+<div data-role="fieldcontain">
+  <%= f.label :apikey, Akismet.human_attribute_name(:apikey) %>
+  <%= f.text_field :apikey %><br>
+</div>
+
+<div data-role="fieldcontain">
+  <%= f.label :enabled, Akismet.human_attribute_name(:enabled) %>
+  <%= f.select :enabled, Akismet::ENABLED_TYPE, {}, {"data-role" => "slider"} %>
+</div>
+<%= submit_tag "Submit" %>
