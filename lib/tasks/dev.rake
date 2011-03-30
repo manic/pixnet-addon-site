@@ -11,4 +11,10 @@ namespace :dev do
     puts item.link
   end
 
+  task :test_domain => :environment do
+    u = User.new
+    u.login = 'manic'
+    puts u.pixnet_link
+  end
+
 end
