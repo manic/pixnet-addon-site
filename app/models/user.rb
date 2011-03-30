@@ -70,7 +70,7 @@ class User < ActiveRecord::Base
 
   def parse_pixnet_info
     require 'open-uri'
-    return JSON.parse(open("https://emma.pixnet.cc/users/#{login}").read)
+    return JSON.parse(open("http://emma.pixnet.cc/users/#{login}").read)
   end
 
   protected
